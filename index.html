@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conejo y Huevos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="score">Huevos: <span id="score">0</span></div>
+            <div class="time">Tiempo: <span id="time">0</span></div>
+            <div class="level">Nivel: <span id="level">1</span></div>
+        </div>
+        <div id="maze" class="maze"></div>
+        <div id="pause-menu" class="pause-menu hidden">
+            <h2>Juego Pausado</h2>
+            <button id="resume-btn">Continuar</button>
+            <button id="restart-btn">Reiniciar</button>
+            <button id="exit-btn">Salir</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registrado con éxito');
+                    })
+                    .catch(err => {
+                        console.log('Error al registrar el ServiceWorker:', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html> 
