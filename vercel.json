@@ -1,8 +1,9 @@
 {
     "version": 2,
+    "public": true,
     "builds": [
         {
-            "src": "*.html",
+            "src": "index.html",
             "use": "@vercel/static"
         }
     ],
