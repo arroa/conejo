@@ -8,18 +8,39 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <div class="game-container">
-        <div class="game-header">
-            <div class="score">Huevos: <span id="score">0</span></div>
-            <div class="time">Tiempo: <span id="time">0</span></div>
-            <div class="level">Nivel: <span id="level">1</span></div>
+    <div class="main-layout">
+        <div class="left-panel">
+            <div class="game-container">
+                <div class="game-header">
+                    <div class="score">Huevos: <span id="score">0</span></div>
+                    <div class="time">Tiempo: <span id="time">0</span></div>
+                    <div class="level">Nivel: <span id="level">1</span></div>
+                </div>
+                <div id="maze" class="maze"></div>
+                <div id="pause-menu" class="pause-menu hidden">
+                    <h2>Juego Pausado</h2>
+                    <div class="pause-buttons">
+                        <button id="next-btn" style="display:none">Siguiente Nivel (S)</button>
+                        <button id="restart-level-btn">Reiniciar Nivel (R)</button>
+                        <button id="restart-btn">Reiniciar Todo (T)</button>
+                        <button id="exit-btn">Salir (S)</button>
+                    </div>
+                </div>
+            </div>
+            <div class="instructions-panel">
+                <h2>Instrucciones</h2>
+                <ul>
+                    <li>Mueve el conejo con las flechas o WASD.</li>
+                    <li>Recoge todas las <span class="icon-inline carrot"></span> zanahorias para pasar de nivel.</li>
+                    <li>Evita las <span class="icon-inline bomb"></span> bombas y los <span class="icon-inline tree"></span> árboles.</li>
+                    <li>El tiempo comienza con tu primer movimiento.</li>
+                    <li>Puedes pausar el juego con la barra espaciadora.</li>
+                    <li>¡Supera todos los niveles!</li>
+                </ul>
+            </div>
         </div>
-        <div id="maze" class="maze"></div>
-        <div id="pause-menu" class="pause-menu hidden">
-            <h2>Juego Pausado</h2>
-            <button id="resume-btn">Continuar</button>
-            <button id="restart-btn">Reiniciar</button>
-            <button id="exit-btn">Salir</button>
+        <div class="results-panel">
+            <div id="results"></div>
         </div>
     </div>
     <script src="game.js"></script>
